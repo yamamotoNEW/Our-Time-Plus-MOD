@@ -1,8 +1,10 @@
+
 label ch0:
     stop music fadeout 2.0
 
     scene black
     with dissolve_scene_full
+    
     m "..."
     m "...Why?"
     m "...Why did you bring me back?"
@@ -834,7 +836,7 @@ label ch0:
     scene bg shop_interior
     with wipeleft_scene
 
-    "Shop Clerk" "Welcome!"
+    shopclerk "Welcome!"
     "I tend to visit this place every once in a while."
     "However, this is my first time coming here with Monika."
     "Somehow, the atmosphere feels completly different."
@@ -902,7 +904,7 @@ label ch0:
     scene bg shop_interior
     with wipeleft_scene
 
-    "Shop Clerk" "Thanks for your purchase!"
+    shopclerk "Thanks for your purchase!"
     "After having put everything in bags, Monika and I exit the store."
     show monika o1_1j at t11
     m "Alright. Let's go back."
@@ -1257,13 +1259,15 @@ label ch0:
 
 
     label askQuestions:
+    $ asked_talk = False
     menu:
-        "What's it like to talk to me?":
+        "What's it like to talk to me?" if not asked_talk:
             m o1_1a "Well, it's quite easy to explain, actually."
             m "Whenever I talk to {i}you{/i}, it's like you take control of the [player] in front of me right now."
             m "Whatever you choose in the menus, is what this [player] will say to me, with his own voice."
             m "It probably isn't shown in the script, but that is how it is for me in this world."
             m o1_1j "It's like I'm talking to you!"
+            $ asked_talk = True
             jump askQuestions
         "Why are we living together?":
 
