@@ -1,3 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 define config.name = "DDLC - Our Time plus"
 
 
@@ -9,7 +23,7 @@ define gui.show_name = True
 
 
 
-define config.version = "1.0.0"
+define config.version = "1.0.1"
 
 
 
@@ -200,17 +214,15 @@ init python:
 
 
 
-
     build.archive("scripts",build.name)
     build.archive("mod_assets",build.name)
     build.archive("ourtime_assets",build.name)
 
 
-
-
     build.classify("game/mod_assets/**","mod_assets")
     build.classify("game/ourtime_assets/**","ourtime_assets")
-    build.classify("game/**.rpyc","scripts") 
+
+    build.classify("game/**.rpyc","scripts")
 
 
     build.classify('**.rpy','source')
@@ -236,8 +248,9 @@ init python:
 
 
 
-#    build.documentation('*.html')
-#    build.documentation('*.txt')
-#    build.documentation('*.md')
+    build.documentation('*.html')
+    build.documentation('*.txt')
+    build.documentation('*.md')
 
     build.include_old_themes = False
+# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
